@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3110d612f01061846a033bace893b2ec, type: 3}
+  m_Name: Iceball
+  m_EditorClassIdentifier: 
+  spellName: Iceball
+  spellSprite: {fileID: -7356014267408769368, guid: 72b5bd56760291140bca076a0c2d450e, type: 3}
+  prefab: {fileID: 3661636605296168327, guid: 6029bb4d4f6d0bc48a56384934c8949c, type: 3}
+  projectileSpeed: 10
+  lifeTime: 1
+  rotationOffset: 0

@@ -1,8 +1,9 @@
-using grcubes;
 using UnityEngine;
+using UnityEngine.InputSystem.XR.Haptics;
 
 namespace grcubes
 {
+    [CreateAssetMenu(menuName = "Spells/Projectile")]
     public class ProjectileSpell : Spell
     {
         [SerializeField] private GameObject prefab;
@@ -20,7 +21,19 @@ namespace grcubes
             proj.transform.position = origin;
             proj.transform.rotation = Quaternion.Euler(0, 0, rotation + rotationOffset);
 
-            if (rb != null) rb.linearVelocity = proj.transform.forward * projectileSpeed;
+            float radianAngle = (rotation + rotationOffset) * Mathf.Deg2Rad;
+            Vector2 direction = new(Mathf.Cos(radianAngle), Mathf.Sin(radianAngle));
+
+            rb = proj.GetComponent<Rigidbody2D>();
+
+            if (rb != null)
+            {
+                rb.linearVelocity = direction * projectileSpeed;
+            } 
+            else
+            {
+                Debug.LogError($"{spellName} projectible prefab has no Rigidbody2D");
+            }
 
             Destroy(proj, lifeTime);
         }
