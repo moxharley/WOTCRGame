@@ -4,7 +4,7 @@ using UnityEngine.InputSystem.XR.Haptics;
 namespace grcubes
 {
     [CreateAssetMenu(menuName = "Spells/Projectile")]
-    public class ProjectileSpell : Spell
+    public class ProjectileSpell : AttackSpell
     {
         [SerializeField] private GameObject prefab;
         [SerializeField] private float projectileSpeed;

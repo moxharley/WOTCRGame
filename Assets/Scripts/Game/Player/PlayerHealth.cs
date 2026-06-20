@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace grcubes
 {
-    public class PlayerHealth : MonoBehaviour
+    public class PlayerHealth : MonoBehaviour, IDamageable
     {
         [SerializeField] private int maxHealth;
         [SerializeField] private int currentHealth;
