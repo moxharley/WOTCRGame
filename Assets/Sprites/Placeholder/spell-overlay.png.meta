@@ -74,6 +74,150 @@ TextureImporter:
   - first:
       213: -2755275573993241408
     second: spell-overlay_23
+  - first:
+      213: 1069227155319466578
+    second: spell-overlay_24
+  - first:
+      213: 6921288225959986025
+    second: spell-overlay_25
+  - first:
+      213: -7132639391815625431
+    second: spell-overlay_26
+  - first:
+      213: -1054065337531981911
+    second: spell-overlay_27
+  - first:
+      213: 2310425880594246243
+    second: spell-overlay_28
+  - first:
+      213: 2446655708813728412
+    second: spell-overlay_29
+  - first:
+      213: -2035390609368324033
+    second: spell-overlay_30
+  - first:
+      213: -1422265824382048484
+    second: spell-overlay_31
+  - first:
+      213: 4855506556423367812
+    second: spell-overlay_32
+  - first:
+      213: -5163507512011782295
+    second: spell-overlay_33
+  - first:
+      213: 8202791641013372630
+    second: spell-overlay_34
+  - first:
+      213: 4182086433813547846
+    second: spell-overlay_35
+  - first:
+      213: 3118017094909678618
+    second: spell-overlay_36
+  - first:
+      213: 3465472595657597739
+    second: spell-overlay_37
+  - first:
+      213: 4086268768869689496
+    second: spell-overlay_38
+  - first:
+      213: 2598023931368183907
+    second: spell-overlay_39
+  - first:
+      213: -921392155989274575
+    second: spell-overlay_40
+  - first:
+      213: -7593227571404832653
+    second: spell-overlay_41
+  - first:
+      213: -1940094631010292214
+    second: spell-overlay_42
+  - first:
+      213: -6569042253415788175
+    second: spell-overlay_43
+  - first:
+      213: -3226328729174704794
+    second: spell-overlay_44
+  - first:
+      213: 718528939884977274
+    second: spell-overlay_45
+  - first:
+      213: -3401968166936327108
+    second: spell-overlay_46
+  - first:
+      213: -6305891700282706106
+    second: spell-overlay_47
+  - first:
+      213: -8262362105314023332
+    second: spell-overlay_48
+  - first:
+      213: -4471420299700846480
+    second: spell-overlay_49
+  - first:
+      213: -318261315078271807
+    second: spell-overlay_50
+  - first:
+      213: 5126103483456645270
+    second: spell-overlay_51
+  - first:
+      213: 9083010690093486321
+    second: spell-overlay_52
+  - first:
+      213: -4713473785982978907
+    second: spell-overlay_53
+  - first:
+      213: -2016120411622594612
+    second: spell-overlay_54
+  - first:
+      213: -4887647719758197224
+    second: spell-overlay_55
+  - first:
+      213: 5703450290571357323
+    second: spell-overlay_56
+  - first:
+      213: 8167192319367506319
+    second: spell-overlay_57
+  - first:
+      213: 6962011620794227092
+    second: spell-overlay_58
+  - first:
+      213: 2210884268873295727
+    second: spell-overlay_59
+  - first:
+      213: -4225052261132270457
+    second: spell-overlay_60
+  - first:
+      213: 6549331393572378226
+    second: spell-overlay_61
+  - first:
+      213: -9047010413798664856
+    second: spell-overlay_62
+  - first:
+      213: -7375943381963102905
+    second: spell-overlay_63
+  - first:
+      213: -270563775233950707
+    second: spell-overlay_64
+  - first:
+      213: -1645326498008253974
+    second: spell-overlay_65
+  - first:
+      213: 8380256838576714343
+    second: spell-overlay_66
+  - first:
+      213: 170212979725016820
+    second: spell-overlay_67
+  - first:
+      213: -5475142583689445484
+    second: spell-overlay_68
+  - first:
+      213: 933449567867549059
+    second: spell-overlay_69
+  - first:
+      213: -7003668812446413579
+    second: spell-overlay_70
+  - first:
+      213: 4110267666678558775
+    second: spell-overlay_71
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -173,7 +317,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 128
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -195,7 +339,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 128
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -217,7 +361,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 128
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -239,7 +383,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 128
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -261,7 +405,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 128
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -283,7 +427,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 128
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -305,7 +449,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 128
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -327,7 +471,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 448
-        y: 128
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -349,7 +493,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -371,7 +515,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 64
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -393,7 +537,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 64
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -415,7 +559,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 64
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -437,7 +581,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 64
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -459,7 +603,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 64
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -481,7 +625,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 64
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -503,7 +647,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 448
-        y: 64
+        y: 448
         width: 64
         height: 64
       alignment: 0
@@ -525,7 +669,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -547,7 +691,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 0
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -569,7 +713,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 0
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -591,7 +735,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 0
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -613,7 +757,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 0
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -635,7 +779,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 0
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -657,7 +801,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 0
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -679,7 +823,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 448
-        y: 0
+        y: 384
         width: 64
         height: 64
       alignment: 0
@@ -696,11 +840,1067 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: spell-overlay_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25aa409ce68a6de00800000000000000
+      internalID: 1069227155319466578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_25
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 963407098fa5d0060800000000000000
+      internalID: 6921288225959986025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_26
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9251fd37346c30d90800000000000000
+      internalID: -7132639391815625431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_27
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9af9a5209253f51f0800000000000000
+      internalID: -1054065337531981911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_28
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36a60b4e818401020800000000000000
+      internalID: 2310425880594246243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_29
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9a168b776444f120800000000000000
+      internalID: 2446655708813728412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_30
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f386f655607d0c3e0800000000000000
+      internalID: -2035390609368324033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_31
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c17a789a4c8134ce0800000000000000
+      internalID: -1422265824382048484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48ce13ccc79326340800000000000000
+      internalID: 4855506556423367812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_33
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9670a7776498758b0800000000000000
+      internalID: -5163507512011782295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_34
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d64529898b26d170800000000000000
+      internalID: 8202791641013372630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_35
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64bcf633471c90a30800000000000000
+      internalID: 4182086433813547846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_36
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a14dfa1270c654b20800000000000000
+      internalID: 3118017094909678618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_37
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b23a50307f4d71030800000000000000
+      internalID: 3465472595657597739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_38
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89820499bc755b830800000000000000
+      internalID: 4086268768869689496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_39
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3681a2b20090e0420800000000000000
+      internalID: 2598023931368183907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1309d6347be8633f0800000000000000
+      internalID: -921392155989274575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_41
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37086b321cf6f9690800000000000000
+      internalID: -7593227571404832653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_42
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0e2dff46366315e0800000000000000
+      internalID: -1940094631010292214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_43
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 171de92ffd216d4a0800000000000000
+      internalID: -6569042253415788175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_44
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66d77e85d17c933d0800000000000000
+      internalID: -3226328729174704794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_45
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7c9eae834ab8f900800000000000000
+      internalID: 718528939884977274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_46
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3cc2900af7c9c0d0800000000000000
+      internalID: -3401968166936327108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_47
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 647b09c98e8fc78a0800000000000000
+      internalID: -6305891700282706106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c58eb1be071365d80800000000000000
+      internalID: -8262362105314023332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_49
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0704cd29de252f1c0800000000000000
+      internalID: -4471420299700846480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_50
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ccc209250f459bf0800000000000000
+      internalID: -318261315078271807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_51
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 698635d75f3932740800000000000000
+      internalID: 5126103483456645270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_52
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f0191a49165d0e70800000000000000
+      internalID: 9083010690093486321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_53
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a47e509090669eb0800000000000000
+      internalID: -4713473785982978907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_54
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc722d0ea2d4504e0800000000000000
+      internalID: -2016120411622594612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_55
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81e80947b469b2cb0800000000000000
+      internalID: -4887647719758197224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8caa9332d9b62f40800000000000000
+      internalID: 5703450290571357323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_57
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f89e2309422b75170800000000000000
+      internalID: 8167192319367506319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_58
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 499d49bcea80e9060800000000000000
+      internalID: 6962011620794227092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_59
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6721bd5783aeae10800000000000000
+      internalID: 2210884268873295727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_60
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78400c19a599d55c0800000000000000
+      internalID: -4225052261132270457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_61
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 276123ed336e3ea50800000000000000
+      internalID: 6549331393572378226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_62
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 865554636ff827280800000000000000
+      internalID: -9047010413798664856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_63
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74522b2d29263a990800000000000000
+      internalID: -7375943381963102905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0c77101ea3ce3cf0800000000000000
+      internalID: -270563775233950707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_65
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae93ea27440aa29e0800000000000000
+      internalID: -1645326498008253974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_66
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76237e5b137ac4470800000000000000
+      internalID: 8380256838576714343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_67
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fe9ba0adc7bc5200800000000000000
+      internalID: 170212979725016820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_68
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49f739424d26404b0800000000000000
+      internalID: -5475142583689445484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_69
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 385bc74bf6744fc00800000000000000
+      internalID: 933449567867549059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_70
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fc46a57258fdce90800000000000000
+      internalID: -7003668812446413579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell-overlay_71
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 730362c6aaa9a0930800000000000000
+      internalID: 4110267666678558775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a78a1c31823b8d84c8787c85481c4457
+    spriteID: 04a0388ee9316fa46a0ddf8338172067
     internalID: 0
     vertices: []
     indices: 
@@ -727,11 +1927,59 @@ TextureImporter:
       spell-overlay_21: -8915670888461622227
       spell-overlay_22: -2307242451185562286
       spell-overlay_23: -2755275573993241408
+      spell-overlay_24: 1069227155319466578
+      spell-overlay_25: 6921288225959986025
+      spell-overlay_26: -7132639391815625431
+      spell-overlay_27: -1054065337531981911
+      spell-overlay_28: 2310425880594246243
+      spell-overlay_29: 2446655708813728412
       spell-overlay_3: 469189272673022001
+      spell-overlay_30: -2035390609368324033
+      spell-overlay_31: -1422265824382048484
+      spell-overlay_32: 4855506556423367812
+      spell-overlay_33: -5163507512011782295
+      spell-overlay_34: 8202791641013372630
+      spell-overlay_35: 4182086433813547846
+      spell-overlay_36: 3118017094909678618
+      spell-overlay_37: 3465472595657597739
+      spell-overlay_38: 4086268768869689496
+      spell-overlay_39: 2598023931368183907
       spell-overlay_4: -2334396151639205211
+      spell-overlay_40: -921392155989274575
+      spell-overlay_41: -7593227571404832653
+      spell-overlay_42: -1940094631010292214
+      spell-overlay_43: -6569042253415788175
+      spell-overlay_44: -3226328729174704794
+      spell-overlay_45: 718528939884977274
+      spell-overlay_46: -3401968166936327108
+      spell-overlay_47: -6305891700282706106
+      spell-overlay_48: -8262362105314023332
+      spell-overlay_49: -4471420299700846480
       spell-overlay_5: 5274004318701423077
+      spell-overlay_50: -318261315078271807
+      spell-overlay_51: 5126103483456645270
+      spell-overlay_52: 9083010690093486321
+      spell-overlay_53: -4713473785982978907
+      spell-overlay_54: -2016120411622594612
+      spell-overlay_55: -4887647719758197224
+      spell-overlay_56: 5703450290571357323
+      spell-overlay_57: 8167192319367506319
+      spell-overlay_58: 6962011620794227092
+      spell-overlay_59: 2210884268873295727
       spell-overlay_6: -3756808426281739130
+      spell-overlay_60: -4225052261132270457
+      spell-overlay_61: 6549331393572378226
+      spell-overlay_62: -9047010413798664856
+      spell-overlay_63: -7375943381963102905
+      spell-overlay_64: -270563775233950707
+      spell-overlay_65: -1645326498008253974
+      spell-overlay_66: 8380256838576714343
+      spell-overlay_67: 170212979725016820
+      spell-overlay_68: -5475142583689445484
+      spell-overlay_69: 933449567867549059
       spell-overlay_7: -1313835617582693199
+      spell-overlay_70: -7003668812446413579
+      spell-overlay_71: 4110267666678558775
       spell-overlay_8: -3801872375184607819
       spell-overlay_9: 3642877205115480994
   mipmapLimitGroupName: 

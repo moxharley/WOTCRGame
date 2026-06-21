@@ -5,7 +5,7 @@ using TMPro;
 public class Roulette : MonoBehaviour
 {
     [Header("Animation Settings")]
-    [SerializeField] private float spinDuration = 2.5f;
+    [SerializeField] private float currentAbsoluteAngle = 0f;
     [SerializeField] private AnimationCurve spinCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
     [Header("Wheel Details")]
@@ -26,9 +26,7 @@ public class Roulette : MonoBehaviour
         SetAllSlotsToEmpty();
 
         //temp: for testing
-        EquipSpellToSlot(0, "Curse");
-        EquipSpellToSlot(1, "Heal");
-        EquipSpellToSlot(2, "Fire Bolt");
+        EquipRandomSpellsDebug();
     }
 
     private void Update()
@@ -57,11 +55,16 @@ public class Roulette : MonoBehaviour
     {
         spinEnabled = false;
 
-        float startAngle = transform.eulerAngles.z;
-        int fullSpins = Random.Range(3, 6);
+        float startAngle = currentAbsoluteAngle;
+        int fullSpins = Random.Range(5, 8);
         int randomSlice = Random.Range(0, 8);
-        float targetAngle = (fullSpins * 360) + (randomSlice * 45) + 22.5f;
+        float targetAngle = startAngle + (fullSpins * 360) + (randomSlice * 45);
+        float spinDuration = 1f * fullSpins / 2f;
         float elapsedTime = 0f;
+
+        // If we don't have this check the wheel spin result will interchange between landing on the slot and on the line
+        if (targetAngle % 45f != 22.5f)
+            targetAngle += 22.5f;
 
         while (elapsedTime < spinDuration)
         {
@@ -75,9 +78,9 @@ public class Roulette : MonoBehaviour
             yield return null;
         }
 
-        transform.eulerAngles = new Vector3(0, 0, targetAngle % 360);
-        finalAngle = Mathf.RoundToInt(transform.eulerAngles.z);
-
+        transform.eulerAngles = new Vector3(0, 0, targetAngle);
+        currentAbsoluteAngle = targetAngle % 360; // Normalizes current angle so the number doesn't get astronomically huge
+        finalAngle = Mathf.RoundToInt(targetAngle % 360);
         ResolveSpell(finalAngle);
 
         spinEnabled = true;
@@ -110,6 +113,24 @@ public class Roulette : MonoBehaviour
             case "Fire Bolt":
                 CastFireBolt();
                 break;
+            case "Frostbite":
+                CastFrostbite();
+                break;
+            case "Poison":
+                CastPoison();
+                break;
+            case "Blood Slash":
+                CastBloodSlash();
+                break;
+            case "Plant Growth":
+                CastPlantGrowth();
+                break;
+            case "Aqua Splash":
+                CastAquaSplash();
+                break;
+            case "Thunder Bolt":
+                CastThunderBolt();
+                break;
             default:
                 break;
         }
@@ -133,5 +154,80 @@ public class Roulette : MonoBehaviour
     private void CastFireBolt()
     {
         resultDisplay.text = "Fire Bolt";
+    }
+
+    private void CastFrostbite()
+    {
+        resultDisplay.text = "Frostbite";
+    }
+
+    private void CastPoison()
+    {
+        resultDisplay.text = "Poison";
+    }
+
+    private void CastBloodSlash()
+    {
+        resultDisplay.text = "Blood Slash";
+    }
+
+    private void CastPlantGrowth()
+    {
+        resultDisplay.text = "Plant Growth";
+    }
+
+    private void CastAquaSplash()
+    {
+        resultDisplay.text = "Aqua Splash";
+    }
+
+    private void CastThunderBolt()
+    {
+        resultDisplay.text = "Thunder Bolt";
+    }
+
+    private void EquipRandomSpellsDebug()
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            int spellIndex = Random.Range(0, 10);
+
+            switch (spellIndex)
+            {
+                case 0:
+                    EquipSpellToSlot(i, "Curse");
+                    break;
+                case 1:
+                    EquipSpellToSlot(i, "Heal");
+                    break;
+                case 2:
+                    EquipSpellToSlot(i, "Fire Bolt");
+                    break;
+                case 3:
+                    EquipSpellToSlot(i, "Frostbite");
+                    break;
+                case 4:
+                    EquipSpellToSlot(i, "Poison");
+                    break;
+                case 5:
+                    EquipSpellToSlot(i, "Blood Slash");
+                    break;
+                case 6:
+                    EquipSpellToSlot(i, "Plant Growth");
+                    break;
+                case 7:
+                    EquipSpellToSlot(i, "Aqua Splash");
+                    break;
+                case 8:
+                    EquipSpellToSlot(i, "Thunder Bolt");
+                    break;
+                case 9:
+                    EquipSpellToSlot(i, "Empty");
+                    break;
+                default:
+                    break;
+            }
+            
+        }
     }
 }
