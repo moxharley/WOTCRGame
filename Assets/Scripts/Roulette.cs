@@ -57,10 +57,33 @@ public class Roulette : MonoBehaviour
     {
         spinEnabled = false;
 
+        // float startAngle = transform.eulerAngles.z;
+        // int fullSpins = Random.Range(3, 6);
+        // int randomSlice = Random.Range(0, 8) * 45;
+        // float targetAngle = startAngle + (fullSpins * 360) + randomSlice;
+        // float elapsedTime = 0f;
+
+        // while (elapsedTime < spinDuration)
+        // {
+        //     elapsedTime += Time.deltaTime;
+
+        //     float t = elapsedTime / spinDuration;
+        //     float curveProgress = spinCurve.Evaluate(t);
+        //     float currentAngle = Mathf.Lerp(startAngle, targetAngle, curveProgress);
+        //     transform.eulerAngles = new Vector3(0, 0, currentAngle);
+
+        //     yield return null;
+        // }
+
+        // transform.eulerAngles = new Vector3(0, 0, targetAngle % 360);
+        // finalAngle = Mathf.RoundToInt(transform.eulerAngles.z);
+
+        // ResolveSpell(finalAngle);
+
         float startAngle = transform.eulerAngles.z;
         int fullSpins = Random.Range(3, 6);
-        int randomSlice = Random.Range(0, 8) * 45;
-        float targetAngle = startAngle + (fullSpins * 360) + randomSlice;
+        int randomSlice = Random.Range(0, 8);
+        float targetAngle = (fullSpins * 360) + (randomSlice * 45) + 22.5f;
         float elapsedTime = 0f;
 
         while (elapsedTime < spinDuration)
@@ -78,7 +101,7 @@ public class Roulette : MonoBehaviour
         transform.eulerAngles = new Vector3(0, 0, targetAngle % 360);
         finalAngle = Mathf.RoundToInt(transform.eulerAngles.z);
 
-        ResolveSpell(finalAngle, resultDisplay);
+        ResolveSpell(finalAngle);
 
         spinEnabled = true;
     }
@@ -91,7 +114,7 @@ public class Roulette : MonoBehaviour
         slots[slotIndex]?.ChangeSprite(spellName);
     }
 
-    private void ResolveSpell(int angle, TextMeshProUGUI resultDisplay)
+    private void ResolveSpell(int angle)
     {
         int slotIndex = (angle / 45 + 6) % 8; // This makes it so the result is the 7th slot in clockwise order.
         string landedSpell = equippedSpells[slotIndex];
