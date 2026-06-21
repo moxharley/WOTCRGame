@@ -25,7 +25,7 @@ public class Roulette : MonoBehaviour
     {
         SetAllSlotsToEmpty();
 
-        //temp
+        //temp: for testing
         EquipSpellToSlot(0, "Curse");
         EquipSpellToSlot(1, "Heal");
         EquipSpellToSlot(2, "Fire Bolt");
@@ -56,29 +56,6 @@ public class Roulette : MonoBehaviour
     private IEnumerator Spin()
     {
         spinEnabled = false;
-
-        // float startAngle = transform.eulerAngles.z;
-        // int fullSpins = Random.Range(3, 6);
-        // int randomSlice = Random.Range(0, 8) * 45;
-        // float targetAngle = startAngle + (fullSpins * 360) + randomSlice;
-        // float elapsedTime = 0f;
-
-        // while (elapsedTime < spinDuration)
-        // {
-        //     elapsedTime += Time.deltaTime;
-
-        //     float t = elapsedTime / spinDuration;
-        //     float curveProgress = spinCurve.Evaluate(t);
-        //     float currentAngle = Mathf.Lerp(startAngle, targetAngle, curveProgress);
-        //     transform.eulerAngles = new Vector3(0, 0, currentAngle);
-
-        //     yield return null;
-        // }
-
-        // transform.eulerAngles = new Vector3(0, 0, targetAngle % 360);
-        // finalAngle = Mathf.RoundToInt(transform.eulerAngles.z);
-
-        // ResolveSpell(finalAngle);
 
         float startAngle = transform.eulerAngles.z;
         int fullSpins = Random.Range(3, 6);
