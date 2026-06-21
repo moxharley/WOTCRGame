@@ -15,7 +15,8 @@ public class Roulette : MonoBehaviour
     private int finalAngle;
 
     [Header("Wheel Slots")]
-    [SerializeField] private string [] equippedSpells = new string[8];
+    [SerializeField] private string[] equippedSpells = new string[8];
+    [SerializeField] private Slot[] slots = new Slot[8];
 
     [Header("UI References")]
     [SerializeField] TextMeshProUGUI resultDisplay;
@@ -72,6 +73,12 @@ public class Roulette : MonoBehaviour
         ResolveSpell(finalAngle, resultDisplay);
 
         spinEnabled = true;
+    }
+
+    private void EquipSpellToSlot(int slotIndex, string spellName)
+    {
+        SpriteRenderer renderer = slots[slotIndex];
+        renderer.ChangeSprite(spellName);
     }
 
     private void ResolveSpell(int angle, TextMeshProUGUI resultDisplay)
