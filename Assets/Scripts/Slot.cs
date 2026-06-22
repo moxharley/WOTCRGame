@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Slot : MonoBehaviour
 {
-    [SerializeField] Sprite[] sprites = new Sprite[9];
+    [SerializeField] Sprite[] sprites;
     private SpriteRenderer cachedRenderer;
 
     private void Awake()
@@ -12,40 +12,29 @@ public class Slot : MonoBehaviour
 
     public void ChangeSprite(string spellName)
     {
-        if (cachedRenderer == null) return;
+        if (cachedRenderer == null)
+        {
+            cachedRenderer = GetComponent<SpriteRenderer>();
+        }
+
+        if (cachedRenderer == null) 
+        {
+            Debug.LogError($"Slot on {gameObject.name} is missing a SpriteRenderer!", this);
+            return;
+        }
 
         switch (spellName)
         {
-            case "Curse":
-                cachedRenderer.sprite = sprites[0];
-                break;
-            case "Heal":
-                cachedRenderer.sprite = sprites[1];
-                break;
-            case "Fire Bolt":
-                cachedRenderer.sprite = sprites[2];
-                break;
-            case "Frostbite":
-                cachedRenderer.sprite = sprites[3];
-                break;
-            case "Poison":
-                cachedRenderer.sprite = sprites[4];
-                break;
-            case "Sacrifice":
-                cachedRenderer.sprite = sprites[5];
-                break;
-            case "Plant Growth":
-                cachedRenderer.sprite = sprites[6];
-                break;
-            case "Aqua Splash":
-                cachedRenderer.sprite = sprites[7];
-                break;
-            case "Thunder Bolt":
-                cachedRenderer.sprite = sprites[8];
-                break;
-            default:
-                cachedRenderer.sprite = null;
-                break;
+            case "Curse": cachedRenderer.sprite = sprites[0]; break;
+            case "Heal": cachedRenderer.sprite = sprites[1]; break;
+            case "Fire Bolt": cachedRenderer.sprite = sprites[2]; break;
+            case "Frostbite": cachedRenderer.sprite = sprites[3]; break;
+            case "Poison": cachedRenderer.sprite = sprites[4]; break;
+            case "Sacrifice": cachedRenderer.sprite = sprites[5]; break;
+            case "Plant Growth": cachedRenderer.sprite = sprites[6]; break;
+            case "Aqua Splash": cachedRenderer.sprite = sprites[7]; break;
+            case "Thunder Bolt": cachedRenderer.sprite = sprites[8]; break;
+            default: cachedRenderer.sprite = null; break;
         }
     }
 }
