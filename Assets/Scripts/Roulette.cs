@@ -15,18 +15,24 @@ public class Roulette : MonoBehaviour
     private int finalAngle;
 
     [Header("Wheel Slots")]
-    [SerializeField] private string[] equippedSpells = new string[8];
-    [SerializeField] private Slot[] slots = new Slot[8];
+    [SerializeField] private string[] equippedSpells;
+    [SerializeField] private Slot[] slots;
 
     [Header("UI References")]
     [SerializeField] TextMeshProUGUI resultDisplay;
 
     private void Awake()
     {
-        SetAllSlotsToEmpty();
+        HandleAssets();
 
-        //temp: for testing
+        if (equippedSpells == null || equippedSpells.Length != slots.Length)
+            equippedSpells = new string[slots.Length];
+
+        SetAllSlotsToEmpty();
         EquipRandomSpellsDebug();
+
+        if (slots.Length < 8)
+            Debug.LogError($"Roulette expects 8 slots, but found {slots.Length}!", this);
     }
 
     private void Update()
@@ -34,12 +40,18 @@ public class Roulette : MonoBehaviour
         HandleInput();
     }
 
+    private void HandleAssets()
+    {
+        slots = GetComponentsInChildren<Slot>();
+    }
+
     private void SetAllSlotsToEmpty()
     {
         for (int i = 0; i < equippedSpells.Length; i++)
         {
             equippedSpells[i] = "Empty";
-            if (slots[i] != null) slots[i].ChangeSprite("Empty");
+            if (slots[i] != null) 
+                slots[i].ChangeSprite("Empty");
         }
     }
 
@@ -101,39 +113,19 @@ public class Roulette : MonoBehaviour
 
         switch (landedSpell)
         {
-            case "Empty":
-                CastNothing();
-                break;
-            case "Curse":
-                CastCurse();
-                break;
-            case "Heal":
-                CastHeal();
-                break;
-            case "Fire Bolt":
-                CastFireBolt();
-                break;
-            case "Frostbite":
-                CastFrostbite();
-                break;
-            case "Poison":
-                CastPoison();
-                break;
-            case "Blood Slash":
-                CastBloodSlash();
-                break;
-            case "Plant Growth":
-                CastPlantGrowth();
-                break;
-            case "Aqua Splash":
-                CastAquaSplash();
-                break;
-            case "Thunder Bolt":
-                CastThunderBolt();
-                break;
-            default:
-                break;
+            case "Empty": CastNothing(); break;
+            case "Curse": CastCurse(); break;
+            case "Heal": CastHeal(); break;
+            case "Fire Bolt": CastFireBolt(); break;
+            case "Frostbite": CastFrostbite(); break;
+            case "Poison": CastPoison(); break;
+            case "Sacrifice": CastBloodSlash(); break;
+            case "Plant Growth": CastPlantGrowth(); break;
+            case "Aqua Splash": CastAquaSplash(); break;
+            case "Thunder Bolt": CastThunderBolt(); break;
+            default: break;
         }
+        
     }
 
     private void CastNothing()
@@ -168,7 +160,7 @@ public class Roulette : MonoBehaviour
 
     private void CastBloodSlash()
     {
-        resultDisplay.text = "Blood Slash";
+        resultDisplay.text = "Sacrifice";
     }
 
     private void CastPlantGrowth()
@@ -191,41 +183,18 @@ public class Roulette : MonoBehaviour
         for (int i = 0; i < slots.Length; i++)
         {
             int spellIndex = Random.Range(0, 10);
-
             switch (spellIndex)
             {
-                case 0:
-                    EquipSpellToSlot(i, "Curse");
-                    break;
-                case 1:
-                    EquipSpellToSlot(i, "Heal");
-                    break;
-                case 2:
-                    EquipSpellToSlot(i, "Fire Bolt");
-                    break;
-                case 3:
-                    EquipSpellToSlot(i, "Frostbite");
-                    break;
-                case 4:
-                    EquipSpellToSlot(i, "Poison");
-                    break;
-                case 5:
-                    EquipSpellToSlot(i, "Blood Slash");
-                    break;
-                case 6:
-                    EquipSpellToSlot(i, "Plant Growth");
-                    break;
-                case 7:
-                    EquipSpellToSlot(i, "Aqua Splash");
-                    break;
-                case 8:
-                    EquipSpellToSlot(i, "Thunder Bolt");
-                    break;
-                case 9:
-                    EquipSpellToSlot(i, "Empty");
-                    break;
-                default:
-                    break;
+                case 0: EquipSpellToSlot(i, "Curse"); break;
+                case 1: EquipSpellToSlot(i, "Heal"); break;
+                case 2: EquipSpellToSlot(i, "Fire Bolt"); break;
+                case 3: EquipSpellToSlot(i, "Frostbite"); break;
+                case 4: EquipSpellToSlot(i, "Poison"); break;
+                case 5: EquipSpellToSlot(i, "Sacrifice"); break;
+                case 6: EquipSpellToSlot(i, "Plant Growth"); break;
+                case 7: EquipSpellToSlot(i, "Aqua Splash"); break;
+                case 8: EquipSpellToSlot(i, "Thunder Bolt"); break;
+                case 9: EquipSpellToSlot(i, "Empty"); break;
             }
             
         }
