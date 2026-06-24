@@ -1,0 +1,9 @@
+{
+    "maxHitPoints": 100,
+    "currentHitPoints": 100,
+
+    "contents": {
+        "heal": 1,
+        "fireball": 3
+    }
+}

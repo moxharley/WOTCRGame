@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: d81b60d2f2ed3184781851ae261960c7
+guid: 4a13d6fee5384e3438aa4b5ceb2f488a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 415107506201481639
-    second: Hooded_idle_1_0
-  - first:
-      213: -547523188807942809
-    second: Hooded_idle_1_1
-  - first:
-      213: 3269039907528331583
-    second: Hooded_idle_1_2
-  - first:
-      213: 5229116803938981032
-    second: Hooded_idle_1_3
-  - first:
-      213: 1764201952673934214
-    second: Hooded_idle_1_4
+      213: -2037853476298935574
+    second: HealthBarFill_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -112,111 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hooded_idle_1_0
+      name: HealthBarFill_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
+        x: 4
+        y: 6
+        width: 104
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 0efe7c3e3f1a90b4da49516d75609eec
-      internalID: 415107506201481639
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hooded_idle_1_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d50f719464a6eb1458588d47336fb130
-      internalID: -547523188807942809
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hooded_idle_1_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3b8bb625bd386024c94516e88cb8a317
-      internalID: 3269039907528331583
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hooded_idle_1_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3cc04874cb85c8f48bcaa86e15085c74
-      internalID: 5229116803938981032
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hooded_idle_1_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0cc097c458fe8d74699578e8f5c9f1c9
-      internalID: 1764201952673934214
+      spriteID: ae238e07f0718b3e0800000000000000
+      internalID: -2037853476298935574
       vertices: []
       indices: 
       edges: []
@@ -225,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9c3d9f8c02702654f8ddf785030bb21b
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -235,11 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Hooded_idle_1_0: 415107506201481639
-      Hooded_idle_1_1: -547523188807942809
-      Hooded_idle_1_2: 3269039907528331583
-      Hooded_idle_1_3: 5229116803938981032
-      Hooded_idle_1_4: 1764201952673934214
+      HealthBarFill_0: -2037853476298935574
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
