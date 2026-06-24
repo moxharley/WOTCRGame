@@ -1,16 +1,37 @@
+using AYellowpaper.SerializedCollections;
+using Components;
 using UnityEngine;
 
 public class Wizard : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private struct WizardData
     {
-        
+        public double maxHitPoints;
+        public double currentHitPoints;
+
+        public SerializedDictionary<string, int> contents;
     }
 
-    // Update is called once per frame
-    void Update()
+    [Header("Wizard Type")]
+    [SerializeField] private TextAsset wizardDataResource;
+
+    private HealthComponent health;
+    private InventoryComponent inventory;
+
+    private void Awake()
     {
-        
+        health = GetComponent<HealthComponent>();
+        inventory = GetComponent<InventoryComponent>();
+        loadData();
+    }
+
+    private void loadData()
+    {
+        var wizardData = JsonUtility.FromJson<WizardData>(wizardDataResource.text);
+        Debug.Log($"{wizardData.maxHitPoints} {wizardData.currentHitPoints}");
+        foreach (var key in wizardData.contents.Keys)
+        {
+            Debug.Log(key + ": " + wizardData.contents[key]);
+        }
     }
 }
