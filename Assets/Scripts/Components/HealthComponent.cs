@@ -7,8 +7,11 @@ namespace Components
     {
         private const double DefaultHitPoints = 100;
 
+        [Header("Health Info")]
         [SerializeField, Min(0)] private double maxHitPoints = DefaultHitPoints;
         [SerializeField] private double currentHitPoints = DefaultHitPoints;
+
+        public Action OnHealthChange;
 
         public double MaxHitPoints
         {
@@ -27,10 +30,14 @@ namespace Components
         public double CurrentHitPoints
         {
             get => currentHitPoints;
-            set => currentHitPoints = Math.Min(MaxHitPoints, value);
+            set
+            {
+                currentHitPoints = Math.Min(MaxHitPoints, value);
+                OnHealthChange?.Invoke();
+            }
         }
 
-        public bool IsAlive => currentHitPoints > 0;
+        public bool IsAlive => CurrentHitPoints > 0;
         public bool IsDead => !IsAlive;
 
         public void Hurt(double amount)
@@ -40,7 +47,7 @@ namespace Components
                 throw new ArgumentOutOfRangeException("Expected: amount >= 0; received " + amount);
             }
 
-            currentHitPoints -= amount;
+            CurrentHitPoints -= amount;
         }
 
         public void Heal(double amount)
@@ -50,12 +57,12 @@ namespace Components
                 throw new ArgumentOutOfRangeException("Expected: amount >= 0; received " + amount);
             }
 
-            currentHitPoints = Math.Min(MaxHitPoints, amount);
+            CurrentHitPoints = Math.Min(MaxHitPoints, CurrentHitPoints + amount);
         }
 
         public void MaxHeal()
         {
-            currentHitPoints = MaxHitPoints;
+            CurrentHitPoints = MaxHitPoints;
         }
 
         private void OnValidate()
