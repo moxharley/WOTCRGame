@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.InputSystem;
 using TMPro;
 
 public class Roulette : MonoBehaviour
@@ -21,6 +22,9 @@ public class Roulette : MonoBehaviour
     [Header("UI References")]
     [SerializeField] TextMeshProUGUI resultDisplay;
 
+    private CircleCollider2D cardCollider;
+    private Camera mainCamera;
+
     private void Awake()
     {
         HandleAssets();
@@ -33,6 +37,9 @@ public class Roulette : MonoBehaviour
 
         if (slots.Length < 8)
             Debug.LogError($"Roulette expects 8 slots, but found {slots.Length}!", this);
+
+        cardCollider = GetComponent<CircleCollider2D>();
+        mainCamera = Camera.main;
     }
 
     private void Update()
@@ -43,6 +50,17 @@ public class Roulette : MonoBehaviour
     private void HandleAssets()
     {
         slots = GetComponentsInChildren<Slot>();
+    }
+
+    private Vector2 GetMouseWorldPosition()
+    {
+        Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
+        return mainCamera.ScreenToWorldPoint(mouseScreenPosition);
+    }
+
+    private bool MouseOnCircleCollider()
+    {
+        return cardCollider.OverlapPoint(GetMouseWorldPosition());
     }
 
     private void SetAllSlotsToEmpty()
@@ -57,7 +75,7 @@ public class Roulette : MonoBehaviour
 
     private void HandleInput()
     {
-        if (Input.GetMouseButtonDown(0) && spinEnabled)
+        if (Input.GetMouseButtonDown(0) && spinEnabled && MouseOnCircleCollider())
         {
             StartCoroutine(Spin());
         }
