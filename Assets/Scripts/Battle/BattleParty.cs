@@ -15,9 +15,9 @@ public class BattleParty : MonoBehaviour
 
     [Header("UI Elements")]
     [SerializeField] private string healthBarLabel;
-    private Label uiHealthBarLabel;
+    private Label _uiHealthBarLabel;
     [SerializeField] private string healthBarMask;
-    private VisualElement uiHealthBarMask;
+    private VisualElement _uiHealthBarMask;
 
 
     void Awake()
@@ -45,9 +45,9 @@ public class BattleParty : MonoBehaviour
     private void InitHealth()
     {
         _wizardHealthComponent = wizard.GetComponent<HealthComponent>();
-        uiHealthBarLabel = battlePartyUI.rootVisualElement.Q<Label>(healthBarLabel);
-        uiHealthBarLabel.text = _wizardHealthComponent.CurrentHitPoints.ToString();
-        uiHealthBarMask = battlePartyUI.rootVisualElement.Q<VisualElement>(healthBarMask);
+        _uiHealthBarLabel = battlePartyUI.rootVisualElement.Q<Label>(healthBarLabel);
+        _uiHealthBarLabel.text = _wizardHealthComponent.CurrentHitPoints.ToString();
+        _uiHealthBarMask = battlePartyUI.rootVisualElement.Q<VisualElement>(healthBarMask);
     }
 
     private void ConnectActions()
@@ -57,12 +57,12 @@ public class BattleParty : MonoBehaviour
 
     private void HealthChanged()
     {
-        uiHealthBarLabel.text = _wizardHealthComponent.CurrentHitPoints.ToString();
+        _uiHealthBarLabel.text = _wizardHealthComponent.CurrentHitPoints.ToString();
 
         if (_wizardHealthComponent.CurrentHitPoints < 0) return;
         var healthRatio = (float)_wizardHealthComponent.CurrentHitPoints /
                           (float)_wizardHealthComponent.MaxHitPoints;
         var healthPercent = Mathf.Lerp(14, 86, healthRatio);
-        uiHealthBarMask.style.width = Length.Percent(healthPercent);
+        _uiHealthBarMask.style.width = Length.Percent(healthPercent);
     }
 }

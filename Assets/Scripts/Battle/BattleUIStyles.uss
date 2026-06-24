@@ -1,0 +1,15 @@
+.healthbar-size {
+    width: 900px;
+    height: 200px;
+}
+
+.healthbar-change-transition {
+    flex-grow: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition-property: width;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out-sine;
+}
