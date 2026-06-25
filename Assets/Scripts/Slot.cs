@@ -3,11 +3,15 @@ using UnityEngine;
 public class Slot : MonoBehaviour
 {
     [SerializeField] Sprite[] sprites;
+    [SerializeField] Sprite hoverSprite;
     private SpriteRenderer cachedRenderer;
+
+    [SerializeField] PolygonCollider2D slotCollider;
 
     private void Awake()
     {
         cachedRenderer = GetComponent<SpriteRenderer>();
+        slotCollider = GetComponent<PolygonCollider2D>();
     }
 
     public void ChangeSprite(string spellName)
@@ -36,5 +40,14 @@ public class Slot : MonoBehaviour
             case "Thunder Bolt": cachedRenderer.sprite = sprites[8]; break;
             default: cachedRenderer.sprite = null; break;
         }
+    }
+
+    public PolygonCollider2D SlotCollider => slotCollider;
+
+    public SpriteRenderer SpellRenderer => cachedRenderer;
+
+    public Sprite GetHoverSprite()
+    {
+        return hoverSprite;
     }
 }
