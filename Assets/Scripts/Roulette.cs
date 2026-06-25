@@ -33,7 +33,7 @@ public class Roulette : MonoBehaviour
             equippedSpells = new string[slots.Length];
 
         SetAllSlotsToEmpty();
-        EquipRandomSpellsDebug();
+        // EquipRandomSpellsDebug();
 
         if (slots.Length < 8)
             Debug.LogError($"Roulette expects 8 slots, but found {slots.Length}!", this);
@@ -116,12 +116,17 @@ public class Roulette : MonoBehaviour
         spinEnabled = true;
     }
 
-    private void EquipSpellToSlot(int slotIndex, string spellName)
+    public void EquipSpellToSlot(int slotIndex, string spellName)
     {
         if (slotIndex < 0 || slotIndex >= slots.Length) return;
 
         equippedSpells[slotIndex] = spellName;
         slots[slotIndex]?.ChangeSprite(spellName);
+    }
+
+    public bool SlotIsEmpty(int slotIndex)
+    {
+        return equippedSpells[slotIndex] == "Empty";
     }
 
     private void ResolveSpell(int angle)
@@ -215,5 +220,10 @@ public class Roulette : MonoBehaviour
                 case 9: EquipSpellToSlot(i, "Empty"); break;
             }
         }
+    }
+
+    public Slot[] GetSlots()
+    {
+        return slots;
     }
 }
