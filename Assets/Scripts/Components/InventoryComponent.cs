@@ -15,6 +15,13 @@ namespace Components
         private SerializedDictionary<string, int> contents = new SerializedDictionary<string, int>();
         [SerializeField, Min(1)] private int maxSize = DefaultSize;
 
+        public Action OnItemsChange;
+
+        public SerializedDictionary<string, int> Contents
+        {
+            get => new SerializedDictionary<string, int>(contents);
+        }
+
         public int MaxSize
         {
             get => maxSize;
@@ -100,12 +107,7 @@ namespace Components
         public void Clear()
         {
             contents.Clear();
-        }
-
-        private void Awake()
-        {
-            Add("sleep");
-            Add("job");
+            OnItemsChange?.Invoke();
         }
 
         private void OnValidate()
@@ -121,12 +123,14 @@ namespace Components
             if (amount > 0)
             {
                 contents[item] = contents.GetValueOrDefault(item, 0) + amount;
+                OnItemsChange?.Invoke();
                 return;
             }
 
             FilterEmpty(item);
             if (amount == 0 || CountItem(item) == 0) return;
             contents[item] += amount;
+            OnItemsChange?.Invoke();
         }
 
         private void FilterEmpty(string item)
