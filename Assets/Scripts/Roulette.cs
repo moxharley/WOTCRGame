@@ -11,6 +11,7 @@ public class Roulette : MonoBehaviour
 
     [Header("Wheel Details")]
     [SerializeField] private bool spinEnabled = true;
+    public bool SpinEnabled { get => spinEnabled; set => spinEnabled = value; }
     private int randomValue;
     private float timeInterval;
     private int finalAngle;

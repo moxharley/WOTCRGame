@@ -32,7 +32,7 @@ namespace Battle.BattlePartyStates
                 return;
             }
 
-            WizardSpriteAnimator.SetTrigger(wizardAnimationName);
+            WizardSpriteAnimator.SetTrigger(battleParty.WizardObject.AnimationTriggers[wizardAnimationName]);
         }
     }
 }

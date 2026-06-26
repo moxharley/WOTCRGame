@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,7 @@ public class SpellCard : MonoBehaviour
 
     [Header("Roulette Wheel")]
     [SerializeField] private Roulette roulette;
+    public Roulette RouletteObject { get => roulette; set => roulette = value; }
 
     [Header("Spell Card Sprites")]
     [SerializeField] private Sprite[] cardSprites;
@@ -17,7 +19,19 @@ public class SpellCard : MonoBehaviour
     private Vector2 grabOffset;
     private int lastHoveredIndex = -1;
 
+    public Action<SpellCard> OnPlace;
+
     [SerializeField] private SpellType type;
+
+    public SpellType Type
+    {
+        get => type;
+        set
+        {
+            type = value;
+            RenderCard(type);
+        }
+    }
 
     void Awake()
     {
@@ -31,7 +45,7 @@ public class SpellCard : MonoBehaviour
     void Update()
     {
         HandleInput();
-       
+
         if (isDragging)
         {
             Drag();
@@ -67,7 +81,7 @@ public class SpellCard : MonoBehaviour
     private void HandleDragDrop(int collidingIndex)
     {
         Slot[] slots = roulette.GetSlots();
-        
+
         // if the hovered slot changed since last frame update
         if (collidingIndex != lastHoveredIndex)
         {
@@ -97,10 +111,7 @@ public class SpellCard : MonoBehaviour
         }
     }
 
-    private bool MouseOnCollider()
-    {
-        return cardCollider.OverlapPoint(GetMouseWorldPosition());
-    }
+    private bool MouseOnCollider() { return cardCollider.OverlapPoint(GetMouseWorldPosition()); }
 
     private int CardHoveringSlotIndex()
     {
@@ -144,6 +155,7 @@ public class SpellCard : MonoBehaviour
         {
             roulette.EquipSpellToSlot(hoveringIndex, spellName);
             DestroySelf();
+            OnPlace?.Invoke(this);
         }
     }
 
@@ -168,9 +180,5 @@ public class SpellCard : MonoBehaviour
         }
     }
 
-    private void DestroySelf()
-    {
-        Destroy(gameObject);
-    }
+    private void DestroySelf() { Destroy(gameObject); }
 }
-
