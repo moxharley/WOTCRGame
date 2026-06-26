@@ -34,8 +34,7 @@ public class Roulette : MonoBehaviour
             equippedSpells = new string[slots.Length];
 
         SetAllSlotsToEmpty();
-        // EquipRandomSpellsDebug();
-
+        
         if (slots.Length < 8)
             Debug.LogError($"Roulette expects 8 slots, but found {slots.Length}!", this);
 
@@ -202,29 +201,13 @@ public class Roulette : MonoBehaviour
         resultDisplay.text = "Thunder Bolt";
     }
 
-    private void EquipRandomSpellsDebug()
-    {
-        for (int i = 0; i < slots.Length; i++)
-        {
-            int spellIndex = Random.Range(0, 10);
-            switch (spellIndex)
-            {
-                case 0: EquipSpellToSlot(i, "Curse"); break;
-                case 1: EquipSpellToSlot(i, "Heal"); break;
-                case 2: EquipSpellToSlot(i, "Fire Bolt"); break;
-                case 3: EquipSpellToSlot(i, "Frostbite"); break;
-                case 4: EquipSpellToSlot(i, "Poison"); break;
-                case 5: EquipSpellToSlot(i, "Sacrifice"); break;
-                case 6: EquipSpellToSlot(i, "Plant Growth"); break;
-                case 7: EquipSpellToSlot(i, "Aqua Splash"); break;
-                case 8: EquipSpellToSlot(i, "Thunder Bolt"); break;
-                case 9: EquipSpellToSlot(i, "Empty"); break;
-            }
-        }
-    }
-
     public Slot[] GetSlots()
     {
         return slots;
+    }
+
+    public void ChangeDisplay(string message)
+    {
+        resultDisplay.text = message;
     }
 }
