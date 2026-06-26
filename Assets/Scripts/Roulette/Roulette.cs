@@ -227,4 +227,9 @@ public class Roulette : MonoBehaviour
     {
         return slots;
     }
+
+    public void ChangeDisplay(string message)
+    {
+        resultDisplay.text = message;
+    }
 }

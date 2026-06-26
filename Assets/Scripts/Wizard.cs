@@ -20,6 +20,9 @@ public class Wizard : MonoBehaviour
 
     private HealthComponent _health;
     private InventoryComponent _inventory;
+    private SpellHealComponent _healmod;
+    private SpellAttackComponent _attackmod;
+    private SpellArmourComponent _armourmod;
 
     [Header("Animations")]
     private Animator _animator;
@@ -52,4 +55,10 @@ public class Wizard : MonoBehaviour
             Debug.Log(key + ": " + wizardData.Contents[key]);
         }
     }
+
+    public HealthComponent GetHealth() => _health;
+    public InventoryComponent GetInventory() => _inventory;
+    public SpellHealComponent GetHealMod() => _healmod;
+    public SpellAttackComponent GetAttackMod() => _attackmod;
+    public SpellArmourComponent GetArmourMod() => _armourmod;
 }
