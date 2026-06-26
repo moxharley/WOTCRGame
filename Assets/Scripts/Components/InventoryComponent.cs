@@ -17,10 +17,7 @@ namespace Components
 
         public Action OnItemsChange;
 
-        public SerializedDictionary<string, int> Contents
-        {
-            get => new SerializedDictionary<string, int>(contents);
-        }
+        public SerializedDictionary<string, int> Contents { get => new SerializedDictionary<string, int>(contents); }
 
         public int MaxSize
         {
@@ -86,6 +83,12 @@ namespace Components
             return 1;
         }
 
+        public int Remove(Enum item)
+        {
+            Debug.Log("Removed Item: " + item.ToString());
+            return Remove(item.ToString().ToLower());
+        }
+
         public int Remove(string item, int amount)
         {
             if (amount < 0)
@@ -104,6 +107,11 @@ namespace Components
             return amount;
         }
 
+        public int Remove(Enum item, int amount)
+        {
+            return Remove(item.ToString(), amount);
+        }
+
         public void Clear()
         {
             contents.Clear();
@@ -120,6 +128,7 @@ namespace Components
 
         private void DefaultAdd(string item, int amount)
         {
+            item = item.ToLower();
             if (amount > 0)
             {
                 contents[item] = contents.GetValueOrDefault(item, 0) + amount;

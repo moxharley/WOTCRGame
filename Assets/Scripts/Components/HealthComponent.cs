@@ -12,6 +12,9 @@ namespace Components
         [SerializeField] private double currentHitPoints = DefaultHitPoints;
 
         public Action OnHealthChange;
+        public Action OnHurt;
+        public Action OnHeal;
+        public Action OnDeath;
 
         public double MaxHitPoints
         {
@@ -48,6 +51,7 @@ namespace Components
             }
 
             CurrentHitPoints -= amount;
+            OnHurt?.Invoke();
         }
 
         public void Heal(double amount)
@@ -58,11 +62,17 @@ namespace Components
             }
 
             CurrentHitPoints = Math.Min(MaxHitPoints, CurrentHitPoints + amount);
+            OnHeal?.Invoke();
         }
 
-        public void MaxHeal()
+        public void MaxHeal() { CurrentHitPoints = MaxHitPoints; }
+
+        private void Awake()
         {
-            CurrentHitPoints = MaxHitPoints;
+            OnHurt += () =>
+            {
+                if (IsDead) OnDeath?.Invoke();
+            };
         }
 
         private void OnValidate()

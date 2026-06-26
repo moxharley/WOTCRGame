@@ -9,9 +9,10 @@ namespace LootTables
     {
         public static T GetOne<T>(Dictionary<T, int> table)
         {
-            if (table.Count == 0)
+            if (table.Values.Sum() == 0)
             {
-                throw new ArgumentOutOfRangeException("Expected: table.Count >= 1; Received: " + table.Count);
+                throw new ArgumentOutOfRangeException(
+                    "Expected: table.Values.Sum() >= 1; Received: " + table.Values.Sum());
             }
 
             var target = UnityEngine.Random.Range(0, table.Values.Sum());
@@ -41,11 +42,11 @@ namespace LootTables
 
         public static ICollection<T> DropMany<T>(Dictionary<T, int> table, uint count)
         {
-            if (count > table.Count)
+            if (count > table.Values.Sum())
             {
                 throw new ArgumentOutOfRangeException(
-                    "Expected: count <= table.Count; " +
-                    "Received: " + "count(" + count + "), table.Count(" + table.Count + ")");
+                    "Expected: count <= table.Values.Sum(); " +
+                    "Received: " + "count(" + count + "), table.Values.Sum()(" + table.Count + ")");
             }
 
             var tempTable = new Dictionary<T, int>(table);
