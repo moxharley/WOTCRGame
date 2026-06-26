@@ -26,8 +26,6 @@ namespace Battle
         private readonly List<string> _activeCards = new List<string>();
         private readonly List<GameObject> _activeCardObjects = new List<GameObject>();
 
-        private Vector3 NextFreePosition => new Vector3(
-            (Count - 1) * cardSpacing, 0, 0);
 
         public Action<SpellType> OnUseSpell;
 
@@ -84,11 +82,15 @@ namespace Battle
                 Destroy(transform.GetChild(i).gameObject);
             }
         }
+        
+        private Vector3 NextFreePosition => new Vector3(
+            transform.position.x + (Count - 1) * cardSpacing, transform.position.y, 0);
 
         private GameObject CreateCard(SpellType spellType)
         {
             var card = Instantiate(cardPrefab, transform);
-            card.transform.position = NextFreePosition;
+            Debug.Log("Position: " + NextFreePosition.x + ", " + NextFreePosition.y);
+            card.GetComponent<Transform>().position = NextFreePosition;
             var spellCardComponent = card.GetComponent<SpellCard>();
             spellCardComponent.Type = spellType;
             spellCardComponent.RouletteObject = RouletteObject;

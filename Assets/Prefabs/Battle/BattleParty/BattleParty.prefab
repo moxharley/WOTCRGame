@@ -63,7 +63,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3318144765424440450, guid: 5792f6dfe9bbfff408b10a91cfe1972c, type: 3}
       propertyPath: cardSpacing
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3370143788261261237, guid: 5792f6dfe9bbfff408b10a91cfe1972c, type: 3}
       propertyPath: m_Pivot.x
@@ -131,7 +131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3370143788261261237, guid: 5792f6dfe9bbfff408b10a91cfe1972c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -5
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 3370143788261261237, guid: 5792f6dfe9bbfff408b10a91cfe1972c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
