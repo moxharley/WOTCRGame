@@ -100,7 +100,7 @@ public class SpellManager : MonoBehaviour
 
     private void CastThunderBolt()
     {
-        HealthComponent healthBarOpponent = target.GetHealth();
+        HealthComponent healthBar = target.GetHealth();
         SpellAttackComponent attackMod = caster.GetAttackMod();
 
         roulette.ChangeDisplay("Thunder Bolt");
