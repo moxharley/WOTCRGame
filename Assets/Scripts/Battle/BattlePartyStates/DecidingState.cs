@@ -8,15 +8,21 @@ namespace Battle.BattlePartyStates
 {
     public class DecidingState : BattlePartyBaseState
     {
-        [Header("Wizard Info")]
+        [Header("Decision Info")]
+        [SerializeField, Range(0, 5)] private uint maxCardUsesPerTurn = 1;
+        [SerializeField] private uint cardsUsed;
+
+        [Header("Loadout Components")]
         [SerializeField] private Loadout loadout;
         private InventoryComponent _wizardInventory;
+
 
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             base.OnStateEnter(animator, stateInfo, layerIndex);
 
             battleParty.RouletteObject.SpinEnabled = false;
+            cardsUsed = 0;
             SpawnLoadout();
             Debug.Log("Enter Deciding...");
         }
@@ -25,9 +31,9 @@ namespace Battle.BattlePartyStates
         {
             base.OnStateUpdate(animator, stateInfo, layerIndex);
             Debug.Log("Deciding...");
-            if (Input.GetKeyDown(KeyCode.KeypadEnter))
+            if (cardsUsed == maxCardUsesPerTurn)
             {
-                animator.SetTrigger(stateTriggers["FinishDeciding"]);
+                battleParty.OnFinishDeciding?.Invoke();
             }
         }
 
@@ -40,7 +46,6 @@ namespace Battle.BattlePartyStates
 
         private void SpawnLoadout()
         {
-            
             loadout.AddRange(LootTable.DropMany(
                 _wizardInventory.Contents,
                 (uint)Math.Min(loadout.Capacity, _wizardInventory.Count)));
@@ -50,9 +55,8 @@ namespace Battle.BattlePartyStates
 
         private void UseUpSpell(SpellType spellType)
         {
-            Debug.Log("Using up: " + spellType);
             _wizardInventory.Remove(spellType);
-            Debug.Log("Inventory: " + _wizardInventory.Count);
+            cardsUsed++;
         }
 
         protected override void InitParty(Animator animator)
@@ -61,16 +65,14 @@ namespace Battle.BattlePartyStates
             InitComponents();
             ConnectActions();
         }
+
         private void InitComponents()
         {
             _wizardInventory = battleParty.WizardObject.GetComponent<InventoryComponent>();
             loadout = battleParty.LoadoutObject;
         }
 
-        private void ConnectActions()
-        {
-            loadout.OnUseSpell += UseUpSpell;
-        }
+        private void ConnectActions() { loadout.OnUseSpell += UseUpSpell; }
 
         private void DebugLoadout()
         {

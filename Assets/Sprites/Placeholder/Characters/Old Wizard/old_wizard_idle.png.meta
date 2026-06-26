@@ -1,22 +1,25 @@
 fileFormatVersion: 2
-guid: b17300539f6e406479e496fa3f9a08dc
+guid: d8d0e908e75711e4996e190c3bb8f674
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6937249283540488218
-    second: Red_Hooded_idle_1-sheet_0
+      213: -3064003868269959198
+    second: old_wizard_idle_0
   - first:
-      213: -5085137569000985623
-    second: Red_Hooded_idle_1-sheet_1
+      213: -2270159662112545193
+    second: old_wizard_idle_1
   - first:
-      213: -238705603456711015
-    second: Red_Hooded_idle_1-sheet_2
+      213: -2349093457652345929
+    second: old_wizard_idle_2
   - first:
-      213: -2763924210778594470
-    second: Red_Hooded_idle_1-sheet_3
+      213: -4305023469079169707
+    second: old_wizard_idle_3
   - first:
-      213: 5369289082128970896
-    second: Red_Hooded_idle_1-sheet_4
+      213: -4272133496915812265
+    second: old_wizard_idle_4
+  - first:
+      213: -7016578790430607658
+    second: old_wizard_idle_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -112,12 +115,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Red_Hooded_idle_1-sheet_0
+      name: old_wizard_idle_0
       rect:
         serializedVersion: 2
-        x: 3
+        x: 1
         y: 0
-        width: 29
+        width: 31
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -127,19 +130,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6ef6c302880f9bf90800000000000000
-      internalID: -6937249283540488218
+      spriteID: 2e7a85137b87a75d0800000000000000
+      internalID: -3064003868269959198
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red_Hooded_idle_1-sheet_1
+      name: old_wizard_idle_1
       rect:
         serializedVersion: 2
-        x: 35
+        x: 33
         y: 0
-        width: 29
+        width: 31
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -149,19 +152,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9ebe3bdb256fd69b0800000000000000
-      internalID: -5085137569000985623
+      spriteID: 7566c5ca0d5ce70e0800000000000000
+      internalID: -2270159662112545193
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red_Hooded_idle_1-sheet_2
+      name: old_wizard_idle_2
       rect:
         serializedVersion: 2
-        x: 67
+        x: 65
         y: 0
-        width: 28
+        width: 31
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -171,19 +174,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9964114b482ffacf0800000000000000
-      internalID: -238705603456711015
+      spriteID: 7b3107042f7566fd0800000000000000
+      internalID: -2349093457652345929
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red_Hooded_idle_1-sheet_3
+      name: old_wizard_idle_3
       rect:
         serializedVersion: 2
-        x: 99
+        x: 97
         y: 0
-        width: 29
+        width: 31
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -193,20 +196,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a53a07ef29194a9d0800000000000000
-      internalID: -2763924210778594470
+      spriteID: 555f0dfb6fb7144c0800000000000000
+      internalID: -4305023469079169707
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Red_Hooded_idle_1-sheet_4
+      name: old_wizard_idle_4
       rect:
         serializedVersion: 2
-        x: 130
+        x: 129
         y: 0
-        width: 30
-        height: 31
+        width: 31
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,8 +218,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0943ea4f8fb838a40800000000000000
-      internalID: 5369289082128970896
+      spriteID: 7502943283556b4c0800000000000000
+      internalID: -4272133496915812265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: old_wizard_idle_5
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 0
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d6f7d9f3ca10ae90800000000000000
+      internalID: -7016578790430607658
       vertices: []
       indices: 
       edges: []
@@ -235,11 +260,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Red_Hooded_idle_1-sheet_0: -6937249283540488218
-      Red_Hooded_idle_1-sheet_1: -5085137569000985623
-      Red_Hooded_idle_1-sheet_2: -238705603456711015
-      Red_Hooded_idle_1-sheet_3: -2763924210778594470
-      Red_Hooded_idle_1-sheet_4: 5369289082128970896
+      old_wizard_idle_0: -3064003868269959198
+      old_wizard_idle_1: -2270159662112545193
+      old_wizard_idle_2: -2349093457652345929
+      old_wizard_idle_3: -4305023469079169707
+      old_wizard_idle_4: -4272133496915812265
+      old_wizard_idle_5: -7016578790430607658
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

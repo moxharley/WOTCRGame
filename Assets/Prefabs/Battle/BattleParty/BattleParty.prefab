@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6258504932043542568}
   - component: {fileID: 7924644450163030591}
+  - component: {fileID: 4332524786607265986}
   m_Layer: 0
   m_Name: BattleParty
   m_TagString: Untagged
@@ -53,6 +54,28 @@ MonoBehaviour:
   healthBarLabel: 
   healthBarMask: 
   inventoryCountLabel: 
+--- !u!95 &4332524786607265986
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8450830509190675978}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a8936ae59745f1840ad56d0f849ee7e4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &4538139275499982426
 PrefabInstance:
   m_ObjectHideFlags: 0

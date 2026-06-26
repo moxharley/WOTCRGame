@@ -1,7 +1,11 @@
+using System;
 using UnityEngine;
 using System.Collections;
+using System.Linq;
 using UnityEngine.InputSystem;
 using TMPro;
+using Unity.VisualScripting;
+using Random = UnityEngine.Random;
 
 public class Roulette : MonoBehaviour
 {
@@ -25,6 +29,11 @@ public class Roulette : MonoBehaviour
 
     private CircleCollider2D cardCollider;
     private Camera mainCamera;
+    
+    // Actions
+    public Action OnSpinStart;
+    public Action OnSpinStop;
+    public Action<int> OnLandOnSlot;
 
     private void Awake()
     {
@@ -43,15 +52,9 @@ public class Roulette : MonoBehaviour
         mainCamera = Camera.main;
     }
 
-    private void Update()
-    {
-        HandleInput();
-    }
+    private void Update() { HandleInput(); }
 
-    private void HandleAssets()
-    {
-        slots = GetComponentsInChildren<Slot>();
-    }
+    private void HandleAssets() { slots = GetComponentsInChildren<Slot>(); }
 
     private Vector2 GetMouseWorldPosition()
     {
@@ -59,17 +62,14 @@ public class Roulette : MonoBehaviour
         return mainCamera.ScreenToWorldPoint(mouseScreenPosition);
     }
 
-    private bool MouseOnCircleCollider()
-    {
-        return cardCollider.OverlapPoint(GetMouseWorldPosition());
-    }
+    private bool MouseOnCircleCollider() { return cardCollider.OverlapPoint(GetMouseWorldPosition()); }
 
     private void SetAllSlotsToEmpty()
     {
         for (int i = 0; i < equippedSpells.Length; i++)
         {
             equippedSpells[i] = "Empty";
-            if (slots[i] != null) 
+            if (slots[i] != null)
                 slots[i].ChangeSprite("Empty");
         }
     }
@@ -84,6 +84,7 @@ public class Roulette : MonoBehaviour
 
     private IEnumerator Spin()
     {
+        OnSpinStart?.Invoke();
         spinEnabled = false;
 
         float startAngle = currentAbsoluteAngle;
@@ -110,11 +111,13 @@ public class Roulette : MonoBehaviour
         }
 
         transform.eulerAngles = new Vector3(0, 0, targetAngle);
-        currentAbsoluteAngle = targetAngle % 360; // Normalizes current angle so the number doesn't get astronomically huge
+        currentAbsoluteAngle =
+            targetAngle % 360; // Normalizes current angle so the number doesn't get astronomically huge
         finalAngle = Mathf.RoundToInt(targetAngle % 360);
         ResolveSpell(finalAngle);
 
         spinEnabled = true;
+        OnSpinStop?.Invoke();
     }
 
     public void EquipSpellToSlot(int slotIndex, string spellName)
@@ -125,14 +128,30 @@ public class Roulette : MonoBehaviour
         slots[slotIndex]?.ChangeSprite(spellName);
     }
 
-    public bool SlotIsEmpty(int slotIndex)
+    public bool SlotIsEmpty(int slotIndex) { return equippedSpells[slotIndex] == "Empty"; }
+
+    public int EquippedAmount
     {
-        return equippedSpells[slotIndex] == "Empty";
+        get
+        {
+            var count = 0;
+            for (var i = 0; i < equippedSpells.Length; i++)
+            {
+                if (!SlotIsEmpty(i)) count++;
+            }
+
+            return count;
+        }
     }
+
+    public bool WheelIsEmpty { get => EquippedAmount == 0; }
+    public bool WheelIsFull { get => EquippedAmount == equippedSpells.Length; }
 
     private void ResolveSpell(int angle)
     {
         int slotIndex = (angle / 45 + 6) % 8; // This makes it so the result is the 7th slot in clockwise order.
+        OnLandOnSlot?.Invoke(slotIndex);
+        
         string landedSpell = equippedSpells[slotIndex];
 
         switch (landedSpell)
@@ -149,58 +168,27 @@ public class Roulette : MonoBehaviour
             case "Thunder Bolt": CastThunderBolt(); break;
             default: break;
         }
-        
     }
 
-    private void CastNothing()
-    {
-        resultDisplay.text = "No Spell";
-    }
+    private void CastNothing() { resultDisplay.text = "No Spell"; }
 
-    private void CastCurse()
-    {
-        resultDisplay.text = "Curse";
-    }
+    private void CastCurse() { resultDisplay.text = "Curse"; }
 
-    private void CastHeal()
-    {
-        resultDisplay.text = "Heal";
-    }
+    private void CastHeal() { resultDisplay.text = "Heal"; }
 
-    private void CastFireBolt()
-    {
-        resultDisplay.text = "Fire Bolt";
-    }
+    private void CastFireBolt() { resultDisplay.text = "Fire Bolt"; }
 
-    private void CastFrostbite()
-    {
-        resultDisplay.text = "Frostbite";
-    }
+    private void CastFrostbite() { resultDisplay.text = "Frostbite"; }
 
-    private void CastPoison()
-    {
-        resultDisplay.text = "Poison";
-    }
+    private void CastPoison() { resultDisplay.text = "Poison"; }
 
-    private void CastBloodSlash()
-    {
-        resultDisplay.text = "Sacrifice";
-    }
+    private void CastBloodSlash() { resultDisplay.text = "Sacrifice"; }
 
-    private void CastPlantGrowth()
-    {
-        resultDisplay.text = "Plant Growth";
-    }
+    private void CastPlantGrowth() { resultDisplay.text = "Plant Growth"; }
 
-    private void CastAquaSplash()
-    {
-        resultDisplay.text = "Aqua Splash";
-    }
+    private void CastAquaSplash() { resultDisplay.text = "Aqua Splash"; }
 
-    private void CastThunderBolt()
-    {
-        resultDisplay.text = "Thunder Bolt";
-    }
+    private void CastThunderBolt() { resultDisplay.text = "Thunder Bolt"; }
 
     private void EquipRandomSpellsDebug()
     {
@@ -223,8 +211,5 @@ public class Roulette : MonoBehaviour
         }
     }
 
-    public Slot[] GetSlots()
-    {
-        return slots;
-    }
+    public Slot[] GetSlots() { return slots; }
 }
