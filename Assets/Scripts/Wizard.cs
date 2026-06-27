@@ -1,9 +1,7 @@
-using System;
 using System.Linq;
 using AYellowpaper.SerializedCollections;
 using Components;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 public class Wizard : MonoBehaviour
 {

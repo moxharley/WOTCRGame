@@ -198,7 +198,7 @@ namespace RouletteWheel
         public SpellType GetEquippedSpellType(int index)
         {
             if (String.IsNullOrEmpty(equippedSpells[index].Trim())) return SpellType.EMPTY;
-            
+
             if (!Enum.TryParse(equippedSpells[index], ignoreCase: true, out SpellType equippedSpell))
                 throw new InvalidCastException(
                     "Equipped slot (" + index + ") does not hold a valid spell: " + GetEquippedSpellName(index));

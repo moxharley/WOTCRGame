@@ -58,6 +58,7 @@ namespace Battle
             }
         }
 
+        
         public BattleParty CurrentDecidingParty { get => battleParties[CurrentDecidingPartyIndex]; }
 
         public int CurrentSlotIndex

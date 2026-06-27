@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace LootTables
 {
@@ -15,7 +16,7 @@ namespace LootTables
                     "Expected: table.Values.Sum() >= 1; Received: " + table.Values.Sum());
             }
 
-            var target = UnityEngine.Random.Range(0, table.Values.Sum());
+            var target = Random.Range(0, table.Values.Sum());
             var accumulator = 0;
             foreach (var itemWeightPair in table)
             {
