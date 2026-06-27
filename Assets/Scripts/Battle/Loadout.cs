@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using RouletteWheel;
+using Spells;
 using UnityEngine;
 
 namespace Battle

@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
@@ -11,6 +10,7 @@ namespace Battle.BattlePartyStates
         [Header("BattleParty State")]
         [SerializeField] protected BattleParty battleParty;
         [SerializeField] protected  SerializedDictionary<string, int> stateTriggers;
+        protected Animator BattlePartyStateMachine;
 
         [Header("Wizard Animation")]
         protected Animator WizardSpriteAnimator;
@@ -28,11 +28,8 @@ namespace Battle.BattlePartyStates
         protected virtual void InitParty(Animator animator)
         {
             battleParty = animator.GetComponentInParent<BattleParty>();
-            stateTriggers = new SerializedDictionary<string, int>(
-                animator.parameters.ToDictionary(
-                    trigger => trigger.name,
-                    trigger => Animator.StringToHash(trigger.name))
-            );
+            BattlePartyStateMachine = animator;
+            stateTriggers = battleParty.StateTriggers;
             WizardSpriteAnimator = battleParty.WizardObject.GetComponent<Animator>();
             {
                 if (WizardSpriteAnimator == null)

@@ -18,10 +18,6 @@ namespace Battle.BattlePartyStates
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             Debug.Log("Waiting...");
-            if (Input.GetKeyDown(KeyCode.KeypadEnter))
-            {
-                animator.SetTrigger("StartDeciding");
-            }
         }
 
         private void TriggerWizardIdle()

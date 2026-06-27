@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using AYellowpaper.SerializedCollections;
 using Components;
+using RouletteWheel;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -27,6 +30,14 @@ namespace Battle
         [Header("Animations")]
         private Animator _wizardAnimator;
 
+        [Header("Party State")]
+        public Animator BattlePartyStateMachine { get; private set; }
+
+        public SerializedDictionary<string, int> StateTriggers { get; private set; }
+
+        // Actions
+        public Action OnFinishDeciding;
+
         [Header("UI Document")]
         [SerializeField] private UIDocument battlePartyUI;
 
@@ -42,6 +53,7 @@ namespace Battle
 
         private void Awake()
         {
+            InitBattleParty();
             InitWizard();
             ConnectActions();
         }
@@ -70,6 +82,16 @@ namespace Battle
             {
                 LoadoutObject.RouletteObject = RouletteObject;
             }
+        }
+
+        private void InitBattleParty()
+        {
+            BattlePartyStateMachine = GetComponent<Animator>();
+            StateTriggers = new SerializedDictionary<string, int>(
+                BattlePartyStateMachine.parameters.ToDictionary(
+                    trigger => trigger.name,
+                    trigger => Animator.StringToHash(trigger.name))
+            );
         }
 
         private void InitWizard()
@@ -120,8 +142,10 @@ namespace Battle
         private void KillWizard() { _wizardAnimator.SetTrigger(WizardObject.AnimationTriggers["Death"]); }
 
 
-        private void InventoryChanged() {
+        private void InventoryChanged()
+        {
             Debug.Log("Inventory Changed: " + _wizardInventoryComponent.Count);
-        _uiInventoryCountLabel.text = _wizardInventoryComponent.Count.ToString(); }
+            _uiInventoryCountLabel.text = _wizardInventoryComponent.Count.ToString();
+        }
     }
 }

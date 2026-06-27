@@ -1,13 +1,16 @@
-public enum SpellType
+namespace Spells
 {
-    EMPTY, 
-    CURSE, 
-    HEAL, 
-    FIREBOLT, 
-    FROSTBITE, 
-    POISON, 
-    SACRIFICE, 
-    PLANTGROWTH, 
-    AQUASPLASH, 
-    THUNDERBOLT
+    public enum SpellType
+    {
+        EMPTY,
+        CURSE,
+        HEAL,
+        FIREBOLT,
+        FROSTBITE,
+        POISON,
+        SACRIFICE,
+        PLANTGROWTH,
+        AQUASPLASH,
+        THUNDERBOLT
+    }
 }

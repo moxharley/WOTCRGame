@@ -2,7 +2,7 @@ using System.Collections;
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
 
-namespace Spells
+namespace Spells.StatusEffects
 {
     public abstract class MultiTargetStatusEffect : MonoBehaviour, IStatusEffect
     {

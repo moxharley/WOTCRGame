@@ -1,16 +1,13 @@
 using UnityEngine;
 
-public class BurningEffect : MonoBehaviour
+namespace Spells.StatusEffects
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class BurningEffect : MonoBehaviour
     {
-        
-    }
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        void Start() { }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // Update is called once per frame
+        void Update() { }
     }
 }
