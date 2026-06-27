@@ -12,20 +12,24 @@ namespace Battle.BattleManagerStates
             ExecuteSpell();
         }
 
-        private void ExecuteSpell()
+        protected override void InitManager(Animator animator)
         {
-            //TODO
-            
+            base.InitManager(animator);
+            ConnectActions();
         }
 
         private void ConnectActions()
         {
-            //TODO: Spell animation complete action
+            battleManager.SpellManagerObject.OnFinishCast += SpellComplete;
         }
 
+        private void ExecuteSpell()
+        {
+            battleManager.SpellManagerObject.CastSpell(battleManager.GetSelectedSpell);
+        }
         private void SpellComplete()
         {
-            battleManager.OnFinishSpell?.Invoke();
+            // Hide UI hint
         }
     }
 }

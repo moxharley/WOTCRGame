@@ -12,6 +12,7 @@ namespace Battle.BattlePartyStates
         [Header("Decision Info")]
         [SerializeField, Range(0, 5)] private uint maxCardUsesPerTurn = 1;
         [SerializeField] private uint cardsUsed;
+        private uint _drawnCardsCount;
 
         [Header("Loadout Components")]
         [SerializeField] private Loadout loadout;
@@ -32,7 +33,7 @@ namespace Battle.BattlePartyStates
         {
             base.OnStateUpdate(animator, stateInfo, layerIndex);
             Debug.Log("Deciding...");
-            if (cardsUsed == maxCardUsesPerTurn)
+            if (cardsUsed == _drawnCardsCount || cardsUsed == maxCardUsesPerTurn)
             {
                 battleParty.OnFinishDeciding?.Invoke();
             }
@@ -47,9 +48,8 @@ namespace Battle.BattlePartyStates
 
         private void SpawnLoadout()
         {
-            loadout.AddRange(LootTable.DropMany(
-                _wizardInventory.Contents,
-                (uint)Math.Min(loadout.Capacity, _wizardInventory.Count)));
+            _drawnCardsCount = (uint)Math.Min(loadout.Capacity, _wizardInventory.Count);
+            loadout.AddRange(LootTable.DropMany(_wizardInventory.Contents, _drawnCardsCount));
 
             DebugLoadout();
         }

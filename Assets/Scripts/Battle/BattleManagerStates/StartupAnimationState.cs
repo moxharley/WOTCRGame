@@ -20,9 +20,12 @@ namespace Battle.BattleManagerStates
             base.OnStateUpdate(animator, stateInfo, layerIndex);
             var info = _startAnimationAnimator.GetCurrentAnimatorStateInfo(0);
             Debug.Log("Animation Name: " + info.IsName("StartingAnimation") + ", Time: " + info.normalizedTime);
+            if (info.IsName("StopAnimation"))
+            {
+                RunAnimation();
+            }
             if (info.IsName("StartAnimation") && info.normalizedTime >= 1f)
             {
-                _startAnimationAnimator.SetTrigger(StopAnimationTrigger);
                 BattleManagerStateMachine.SetTrigger(battleManager.StateTriggers["StartDeciding"]);
             }
         }

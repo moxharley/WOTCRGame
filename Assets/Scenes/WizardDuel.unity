@@ -674,6 +674,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 783372604425097896, guid: 90398d034a620fe489342859cccb3414, type: 3}
+      propertyPath: contents._serializedList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 783372604425097896, guid: 90398d034a620fe489342859cccb3414, type: 3}
+      propertyPath: contents._serializedList.Array.data[0].Key
+      value: firebolt
+      objectReference: {fileID: 0}
+    - target: {fileID: 783372604425097896, guid: 90398d034a620fe489342859cccb3414, type: 3}
+      propertyPath: contents._serializedList.Array.data[1].Key
+      value: frostbite
+      objectReference: {fileID: 0}
+    - target: {fileID: 783372604425097896, guid: 90398d034a620fe489342859cccb3414, type: 3}
+      propertyPath: contents._serializedList.Array.data[2].Key
+      value: heal
+      objectReference: {fileID: 0}
+    - target: {fileID: 783372604425097896, guid: 90398d034a620fe489342859cccb3414, type: 3}
+      propertyPath: contents._serializedList.Array.data[0].Value
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 783372604425097896, guid: 90398d034a620fe489342859cccb3414, type: 3}
+      propertyPath: contents._serializedList.Array.data[2].Value
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1842721308788831697, guid: 90398d034a620fe489342859cccb3414, type: 3}
       propertyPath: battlePartyUI
       value: 
@@ -685,6 +709,34 @@ PrefabInstance:
     - target: {fileID: 3978833797033499881, guid: 90398d034a620fe489342859cccb3414, type: 3}
       propertyPath: m_Name
       value: BattleManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406127646837627231, guid: 90398d034a620fe489342859cccb3414, type: 3}
+      propertyPath: contents._serializedList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406127646837627231, guid: 90398d034a620fe489342859cccb3414, type: 3}
+      propertyPath: contents._serializedList.Array.data[0].Key
+      value: curse
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406127646837627231, guid: 90398d034a620fe489342859cccb3414, type: 3}
+      propertyPath: contents._serializedList.Array.data[1].Key
+      value: poison
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406127646837627231, guid: 90398d034a620fe489342859cccb3414, type: 3}
+      propertyPath: contents._serializedList.Array.data[0].Value
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406127646837627231, guid: 90398d034a620fe489342859cccb3414, type: 3}
+      propertyPath: contents._serializedList.Array.data[1].Value
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5190631884333470595, guid: 90398d034a620fe489342859cccb3414, type: 3}
+      propertyPath: resultDisplay
+      value: 
+      objectReference: {fileID: 379250301}
+    - target: {fileID: 8451385167146161638, guid: 90398d034a620fe489342859cccb3414, type: 3}
+      propertyPath: m_Alpha
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

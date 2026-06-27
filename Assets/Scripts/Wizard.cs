@@ -38,6 +38,10 @@ public class Wizard : MonoBehaviour
     {
         _health = GetComponent<HealthComponent>();
         _inventory = GetComponent<InventoryComponent>();
+        _healmod = GetComponent<SpellHealComponent>();
+        _attackmod = GetComponent<SpellAttackComponent>();
+        _armourmod = GetComponent<SpellArmourComponent>();
+        
         _animator = GetComponent<Animator>();
         AnimationTriggers = new SerializedDictionary<string, int>(
             _animator.parameters.ToDictionary(

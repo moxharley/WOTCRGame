@@ -103,13 +103,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roulette: {fileID: 0}
   cardSprites:
-  - {fileID: -4879829405293416676, guid: b25faec2b5128eb4da3b5c59b41554a6, type: 3}
-  - {fileID: -4660976266036075977, guid: b25faec2b5128eb4da3b5c59b41554a6, type: 3}
-  - {fileID: 1286922149551469005, guid: b25faec2b5128eb4da3b5c59b41554a6, type: 3}
-  - {fileID: -8909944796946306623, guid: b25faec2b5128eb4da3b5c59b41554a6, type: 3}
-  - {fileID: 8154215331167285635, guid: b25faec2b5128eb4da3b5c59b41554a6, type: 3}
-  - {fileID: 640906247889343477, guid: b25faec2b5128eb4da3b5c59b41554a6, type: 3}
-  - {fileID: -4487353809410417537, guid: b25faec2b5128eb4da3b5c59b41554a6, type: 3}
+    _serializedList:
+    - Key: 2
+      Value: {fileID: -4879829405293416676, guid: b25faec2b5128eb4da3b5c59b41554a6, type: 3}
+    - Key: 3
+      Value: {fileID: -4660976266036075977, guid: b25faec2b5128eb4da3b5c59b41554a6, type: 3}
+    - Key: 4
+      Value: {fileID: 1286922149551469005, guid: b25faec2b5128eb4da3b5c59b41554a6, type: 3}
+    - Key: 5
+      Value: {fileID: -8909944796946306623, guid: b25faec2b5128eb4da3b5c59b41554a6, type: 3}
+    - Key: 6
+      Value: {fileID: 8154215331167285635, guid: b25faec2b5128eb4da3b5c59b41554a6, type: 3}
+    - Key: 7
+      Value: {fileID: 640906247889343477, guid: b25faec2b5128eb4da3b5c59b41554a6, type: 3}
+    - Key: 8
+      Value: {fileID: 640906247889343477, guid: b25faec2b5128eb4da3b5c59b41554a6, type: 3}
+    - Key: 9
+      Value: {fileID: -4879829405293416676, guid: b25faec2b5128eb4da3b5c59b41554a6, type: 3}
+    - Key: 1
+      Value: {fileID: 640906247889343477, guid: b25faec2b5128eb4da3b5c59b41554a6, type: 3}
   type: 0
 --- !u!58 &6350773209740405085
 CircleCollider2D:

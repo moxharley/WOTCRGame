@@ -381,6 +381,8 @@ MonoBehaviour:
   currentDecidingPartyIndex: 0
   roulette: {fileID: 5190631884333470595}
   startingSlotResult: 0
+  currentSlotIndex: 0
+  spellManager: {fileID: 3780510569943717663}
   battleManagerStateMachine: {fileID: 0}
   stateTriggers:
     _serializedList: []
@@ -707,6 +709,10 @@ PrefabInstance:
     - target: {fileID: 4307568053348680571, guid: 404c4b4990db0f64a922a3c0fb67908b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7613823578830690263, guid: 404c4b4990db0f64a922a3c0fb67908b, type: 3}
+      propertyPath: resultDisplay
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

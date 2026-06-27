@@ -1,7 +1,7 @@
-using System;
 using System.Linq;
 using AYellowpaper.SerializedCollections;
 using RouletteWheel;
+using Spells;
 using UnityEngine;
 
 namespace Battle
@@ -17,7 +17,12 @@ namespace Battle
         [SerializeField] private Roulette roulette;
         public Roulette RouletteObject { get => roulette; }
         [SerializeField] private int startingSlotResult;
-        // TODO: [SerializeField] private SpellManager spellManager;
+        [SerializeField] private int currentSlotIndex;
+
+        [Space]
+        [Header("Spell Manager")]
+        [SerializeField] private SpellManager spellManager;
+        public SpellManager SpellManagerObject { get => spellManager; }
 
         [Space]
         [Header("Battle State")]
@@ -41,10 +46,6 @@ namespace Battle
 
         public int StartingSlotResult { get => startingSlotResult; set => startingSlotResult = value; }
 
-        // Actions
-        // TODO: Move this to Harlan's Spell Manager/Executor
-        public Action OnFinishSpell;
-
         public int CurrentDecidingPartyIndex
         {
             get => currentDecidingPartyIndex;
@@ -59,13 +60,31 @@ namespace Battle
 
         public BattleParty CurrentDecidingParty { get => battleParties[CurrentDecidingPartyIndex]; }
 
+        public int CurrentSlotIndex
+        {
+            get => currentSlotIndex;
+            set
+            {
+                if (value >= RouletteObject.SlotCount)
+                    currentSlotIndex = value % RouletteObject.SlotCount;
+                else
+                    currentSlotIndex = value;
+            }
+        }
+
+        public SpellType GetSelectedSpell { get => RouletteObject.GetEquippedSpellType(CurrentSlotIndex); }
+
         private void Awake()
         {
             InitComponents();
             ConnectActions();
         }
 
-        private void OnValidate() { CurrentDecidingPartyIndex = currentDecidingPartyIndex; }
+        private void OnValidate()
+        {
+            CurrentDecidingPartyIndex = currentDecidingPartyIndex;
+            CurrentSlotIndex = currentSlotIndex;
+        }
 
         private void InitComponents()
         {
@@ -84,24 +103,35 @@ namespace Battle
                 party.OnFinishDeciding += ResolvePartyFinishDecision;
             }
 
-            OnFinishSpell += ResolveSpellFinish;
+            SpellManagerObject.OnFinishCast += ResolveSpellFinish;
         }
 
         private void ResolvePartyFinishDecision()
         {
             CurrentDecidingParty.BattlePartyStateMachine.SetTrigger(
                 CurrentDecidingParty.StateTriggers["FinishDeciding"]);
-            if (roulette.WheelIsFull)
+            CurrentDecidingPartyIndex++;
+            if (roulette.WheelIsFull || battleParties.All(party => party.WizardObject.GetInventory().IsEmpty))
             {
                 BattleManagerStateMachine.SetTrigger(StateTriggers["FinishDeciding"]);
+            }
+            else
+            {
+                BattleManagerStateMachine.SetTrigger(StateTriggers["NextDecision"]);
             }
         }
 
         private void ResolveSpellFinish()
         {
-            //TODO: Unequip spell
-            if (!RouletteObject.WheelIsEmpty)
+            if (CurrentSlotIndex != RouletteObject.SlotCount - 1)
             {
+                CurrentSlotIndex++;
+                BattleManagerStateMachine.SetTrigger(StateTriggers["ExecuteNextSpell"]);
+            }
+            else
+            {
+                RouletteObject.SetAllSlotsToEmpty();
+                BattleManagerStateMachine.SetTrigger(StateTriggers["StartDeciding"]);
             }
         }
     }

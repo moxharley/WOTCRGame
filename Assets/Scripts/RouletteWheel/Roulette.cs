@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Spells;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -23,13 +24,14 @@ namespace RouletteWheel
         [Header("Wheel Slots")]
         [SerializeField] private string[] equippedSpells;
         [SerializeField] private Slot[] slots;
+        public int SlotCount { get => slots.Length; }
 
         [Header("UI References")]
         [SerializeField] TextMeshProUGUI resultDisplay;
 
         private CircleCollider2D cardCollider;
         private Camera mainCamera;
-        
+
         // Actions
         public Action OnSpinStart;
         public Action OnSpinStop;
@@ -43,7 +45,7 @@ namespace RouletteWheel
                 equippedSpells = new string[slots.Length];
 
             SetAllSlotsToEmpty();
-            
+
             if (slots.Length < 8)
                 Debug.LogError($"Roulette expects 8 slots, but found {slots.Length}!", this);
 
@@ -63,7 +65,7 @@ namespace RouletteWheel
 
         private bool MouseOnCircleCollider() { return cardCollider.OverlapPoint(GetMouseWorldPosition()); }
 
-        private void SetAllSlotsToEmpty()
+        public void SetAllSlotsToEmpty()
         {
             for (int i = 0; i < equippedSpells.Length; i++)
             {
@@ -150,7 +152,7 @@ namespace RouletteWheel
         {
             int slotIndex = (angle / 45 + 6) % 8; // This makes it so the result is the 7th slot in clockwise order.
             OnLandOnSlot?.Invoke(slotIndex);
-            
+
             string landedSpell = equippedSpells[slotIndex];
 
             switch (landedSpell)
@@ -189,15 +191,22 @@ namespace RouletteWheel
 
         private void CastThunderBolt() { resultDisplay.text = "Thunder Bolt"; }
 
-        public Slot[] GetSlots()
+        public Slot[] GetSlots() { return slots; }
+        public string[] GetEquipped() { return equippedSpells; }
+        public string GetEquippedSpellName(int index) { return equippedSpells[index]; }
+
+        public SpellType GetEquippedSpellType(int index)
         {
-            return slots;
+            if (String.IsNullOrEmpty(equippedSpells[index].Trim())) return SpellType.EMPTY;
+            
+            if (!Enum.TryParse(equippedSpells[index], ignoreCase: true, out SpellType equippedSpell))
+                throw new InvalidCastException(
+                    "Equipped slot (" + index + ") does not hold a valid spell: " + GetEquippedSpellName(index));
+            return equippedSpell;
         }
 
-        public void ChangeDisplay(string message)
-        {
-            resultDisplay.text = message;
-        }
+        public void ChangeDisplay(string message) { resultDisplay.text = message; }
+
         private void EquipRandomSpellsDebug()
         {
             for (int i = 0; i < slots.Length; i++)

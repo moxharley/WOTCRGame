@@ -29,17 +29,17 @@ namespace RouletteWheel
                 return;
             }
 
-            switch (spellName)
+            switch (spellName.ToLower())
             {
-                case "Curse": cachedRenderer.sprite = sprites[0]; break;
-                case "Heal": cachedRenderer.sprite = sprites[1]; break;
-                case "Fire Bolt": cachedRenderer.sprite = sprites[2]; break;
-                case "Frostbite": cachedRenderer.sprite = sprites[3]; break;
-                case "Poison": cachedRenderer.sprite = sprites[4]; break;
-                case "Sacrifice": cachedRenderer.sprite = sprites[5]; break;
-                case "Plant Growth": cachedRenderer.sprite = sprites[6]; break;
-                case "Aqua Splash": cachedRenderer.sprite = sprites[7]; break;
-                case "Thunder Bolt": cachedRenderer.sprite = sprites[8]; break;
+                case "curse": cachedRenderer.sprite = sprites[0]; break;
+                case "heal": cachedRenderer.sprite = sprites[1]; break;
+                case "firebolt": cachedRenderer.sprite = sprites[2]; break;
+                case "frostbite": cachedRenderer.sprite = sprites[3]; break;
+                case "poison": cachedRenderer.sprite = sprites[4]; break;
+                case "sacrifice": cachedRenderer.sprite = sprites[5]; break;
+                case "plantgrowth": cachedRenderer.sprite = sprites[6]; break;
+                case "aquasplash": cachedRenderer.sprite = sprites[7]; break;
+                case "thunderbolt": cachedRenderer.sprite = sprites[8]; break;
                 default: cachedRenderer.sprite = null; break;
             }
         }

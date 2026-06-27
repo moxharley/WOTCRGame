@@ -107,10 +107,7 @@ namespace Components
             return amount;
         }
 
-        public int Remove(Enum item, int amount)
-        {
-            return Remove(item.ToString(), amount);
-        }
+        public int Remove(Enum item, int amount) { return Remove(item.ToString(), amount); }
 
         public void Clear()
         {

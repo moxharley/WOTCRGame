@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using AYellowpaper.SerializedCollections;
 using RouletteWheel;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -15,7 +17,7 @@ namespace Spells
         public Roulette RouletteObject { get => roulette; set => roulette = value; }
 
         [Header("Spell Card Sprites")]
-        [SerializeField] private Sprite[] cardSprites;
+        [SerializeField] private SerializedDictionary<SpellType, Sprite> cardSprites;
         private SpriteRenderer cardRenderer;
 
         private bool isDragging = false;
@@ -58,17 +60,19 @@ namespace Spells
 
         private void RenderCard(SpellType spellType)
         {
-            switch (spellType)
-            {
-                case SpellType.HEAL: cardRenderer.sprite = cardSprites[0]; break;
-                case SpellType.FIREBOLT: cardRenderer.sprite = cardSprites[1]; break;
-                case SpellType.FROSTBITE: cardRenderer.sprite = cardSprites[2]; break;
-                case SpellType.POISON: cardRenderer.sprite = cardSprites[3]; break;
-                case SpellType.SACRIFICE: cardRenderer.sprite = cardSprites[4]; break;
-                case SpellType.AQUASPLASH: cardRenderer.sprite = cardSprites[5]; break;
-                case SpellType.THUNDERBOLT: cardRenderer.sprite = cardSprites[6]; break;
-                default: cardRenderer.sprite = null; break;
-            }
+            cardRenderer.sprite = cardSprites.GetValueOrDefault(spellType, null);
+            // switch (spellType)
+            // {
+            //     case SpellType.HEAL: cardRenderer.sprite = cardSprites[0]; break;
+            //     case SpellType.FIREBOLT: cardRenderer.sprite = cardSprites[1]; break;
+            //     case SpellType.FROSTBITE: cardRenderer.sprite = cardSprites[2]; break;
+            //     case SpellType.POISON: cardRenderer.sprite = cardSprites[3]; break;
+            //     case SpellType.SACRIFICE: cardRenderer.sprite = cardSprites[4]; break;
+            //     case SpellType.AQUASPLASH: cardRenderer.sprite = cardSprites[5]; break;
+            //     case SpellType.THUNDERBOLT: cardRenderer.sprite = cardSprites[6]; break;
+            //     case SpellType.CURSE: cardRenderer.sprite = cardSprites; break;
+            //     default: cardRenderer.sprite = null; break;
+            // }
         }
 
         private void HandleInput()
@@ -157,7 +161,7 @@ namespace Spells
             if (hoveringIndex != -1 && hoveringIndex < roulette.GetSlots().Length &&
                 roulette.SlotIsEmpty(hoveringIndex))
             {
-                roulette.EquipSpellToSlot(hoveringIndex, spellName);
+                roulette.EquipSpellToSlot(hoveringIndex, spellName.ToLower());
                 DestroySelf();
                 OnPlace?.Invoke(this);
             }
@@ -171,17 +175,18 @@ namespace Spells
 
         private string GetSpellName(SpellType spellType)
         {
-            switch (spellType)
-            {
-                case SpellType.HEAL: return "Heal";
-                case SpellType.FIREBOLT: return "Fire Bolt";
-                case SpellType.FROSTBITE: return "Frostbite";
-                case SpellType.POISON: return "Poison";
-                case SpellType.SACRIFICE: return "Sacrifice";
-                case SpellType.AQUASPLASH: return "Aqua Splash";
-                case SpellType.THUNDERBOLT: return "Thunder Bolt";
-                default: return "";
-            }
+            return spellType.ToString();
+            // switch (spellType)
+            // {
+            //     case SpellType.HEAL: return "Heal";
+            //     case SpellType.FIREBOLT: return "FireBolt";
+            //     case SpellType.FROSTBITE: return "Frostbite";
+            //     case SpellType.POISON: return "Poison";
+            //     case SpellType.SACRIFICE: return "Sacrifice";
+            //     case SpellType.AQUASPLASH: return "AquaSplash";
+            //     case SpellType.THUNDERBOLT: return "ThunderBolt";
+            //     default: return "";
+            // }
         }
 
         private void DestroySelf() { Destroy(gameObject); }
