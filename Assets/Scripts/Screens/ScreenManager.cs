@@ -4,22 +4,16 @@ using UnityEngine.InputSystem;
 public class ScreenManager : MonoBehaviour
 {
     public static ScreenManager Instance { get; private set; }
+
+    [Header("Scenes")]
+    [SerializeField] private string mainMenuScene = "MainMenu";
+
     private Controls controls;
-
-    [Header("Screens")]
-    [SerializeField] private GameObject pauseMenu;
-
-    public bool IsPaused { get; private set; } = false;
 
     void Awake()
     {
         Instance = this;
         controls = new();
-    }
-
-    void Start()
-    {
-        PauseGame();
     }
 
     void OnEnable()
@@ -38,18 +32,6 @@ public class ScreenManager : MonoBehaviour
 
     private void TryPause(InputAction.CallbackContext ctx = default)
     {
-        TogglePause();
-    }
-
-    public void TogglePause()
-    {
-        IsPaused = !IsPaused;
-        PauseGame();
-    }
-
-    public void PauseGame()
-    {
-        pauseMenu.SetActive(IsPaused);
-        Time.timeScale = IsPaused ? 0f : 1f;
+        SceneLoader.Instance.LoadScene(mainMenuScene);
     }
 }
