@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using System.Linq;
 using AYellowpaper.SerializedCollections;
 using Components;
@@ -55,24 +56,6 @@ namespace Battle
             ConnectActions();
         }
 
-        // Update is called once per frame
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Equals))
-            {
-                Debug.Log("Up: " + _wizardHealthComponent.CurrentHitPoints);
-                _wizardHealthComponent.Heal(1);
-                _wizardInventoryComponent.Add("FireboltA");
-            }
-
-            if (Input.GetKeyDown(KeyCode.Minus))
-            {
-                Debug.Log("Down: " + _wizardHealthComponent.CurrentHitPoints);
-                _wizardHealthComponent.Hurt(1);
-                _wizardInventoryComponent.Remove("FireboltA");
-            }
-        }
-
         private void OnValidate()
         {
             if (LoadoutObject.RouletteObject == null)
@@ -103,7 +86,7 @@ namespace Battle
             _wizardHealthComponent = wizard.GetComponent<HealthComponent>();
 
             _uiHealthBarLabel = battlePartyUI.rootVisualElement.Q<Label>(healthBarLabel);
-            _uiHealthBarLabel.text = _wizardHealthComponent.CurrentHitPoints.ToString();
+            _uiHealthBarLabel.text = _wizardHealthComponent.CurrentHitPoints.ToString(CultureInfo.CurrentUICulture);
 
             _uiHealthBarMask = battlePartyUI.rootVisualElement.Q<VisualElement>(healthBarMask);
         }
@@ -125,12 +108,13 @@ namespace Battle
 
         private void HealthChanged()
         {
-            _uiHealthBarLabel.text = _wizardHealthComponent.CurrentHitPoints.ToString();
+            var currentHealth = Math.Max(0, (int)_wizardHealthComponent.CurrentHitPoints);
+            _uiHealthBarLabel.text = currentHealth.ToString(CultureInfo.CurrentUICulture);
 
             if (_wizardHealthComponent.CurrentHitPoints < 0) return;
             var healthRatio = (float)_wizardHealthComponent.CurrentHitPoints /
                               (float)_wizardHealthComponent.MaxHitPoints;
-            var healthPercent = Mathf.Lerp(14, 86, healthRatio);
+            var healthPercent = Mathf.Lerp(8, 86, healthRatio);
             _uiHealthBarMask.style.width = Length.Percent(healthPercent);
         }
 
